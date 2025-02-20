@@ -6,4 +6,5 @@ pyyaml
 torch
 wandb
 tensorboardX
+pydantic
 pytest

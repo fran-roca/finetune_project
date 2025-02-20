@@ -19,20 +19,27 @@ class ModelFactory:
 
         Returns:
             PreTrainedModel: The loaded and configured model.
+
+        Raises:
+            ValueError: If model loading fails.
         """
         model_name: str = model_config["name"]
         device = get_device()
-        logger.info("Detected device: %s", device)
+        logger.info(f"Detected device: {device}")
         device_map: str = "auto" if device == "cuda" else None
-        logger.info("Loading model: %s", model_name)
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            attn_implementation='eager',
-            device_map=device_map
-        )
-        model.resize_token_embeddings(len(tokenizer))
-        if device == "cuda":
-            model.to(torch.bfloat16)
-        else:
-            model.to(device)
-        return model
+        
+        try:
+            logger.info(f"Loading model: {model_name}")
+            model = AutoModelForCausalLM.from_pretrained(
+                model_name,
+                attn_implementation='eager',
+                device_map=device_map,
+                torch_dtype=torch.bfloat16 if device == "cuda" else torch.float32
+            )
+            model.resize_token_embeddings(len(tokenizer))
+            if device == "cpu":
+                model.to(device)
+            return model
+        except Exception as e:
+            logger.error(f"Failed to load model: {str(e)}")
+            raise ValueError(f"Model loading failed: {str(e)}")

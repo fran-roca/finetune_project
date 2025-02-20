@@ -1,0 +1,18 @@
+2025-02-20 21:20:24,864 - train - ERROR - Training failed: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-2-2b-it.
+401 Client Error. (Request ID: Root=1-67b79c99-187279435f847db06dca1885;eebb4025-a839-45d1-ad86-d6a8d335db7a)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json.
+Access to model google/gemma-2-2b-it is restricted. You must have access to it and be authenticated to access it. Please log in.
+2025-02-20 21:24:42,885 - train - ERROR - Training failed: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-2-2b-it.
+401 Client Error. (Request ID: Root=1-67b79d9b-6da1088f5a3a21842cbb42f6;26ffcfb6-79a2-4b15-b3d8-b7cebc57b079)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json.
+Access to model google/gemma-2-2b-it is restricted. You must have access to it and be authenticated to access it. Please log in.
+2025-02-20 21:25:30,505 - train - ERROR - Training failed: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-2-2b-it.
+401 Client Error. (Request ID: Root=1-67b79dca-1c4fb95d1fe5ef9109c5dbfd;486f02d6-68a9-4130-83f2-828bc42d467d)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json.
+Access to model google/gemma-2-2b-it is restricted. You must have access to it and be authenticated to access it. Please log in.

@@ -13,6 +13,7 @@ setup(
         "torch",
         "wandb",        # if needed
         "tensorboardX", # if needed
+        "pydantic"      # for configuration validation
     ],
     entry_points={
         "console_scripts": [

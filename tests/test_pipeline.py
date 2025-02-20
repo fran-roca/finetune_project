@@ -36,7 +36,6 @@ def tokenizer(model_config):
 
 def test_preprocess_sample(sample_data, tokenizer):
     processed = preprocess_sample(sample_data, tokenizer)
-    # Check that the output has a "text" key and that system info is merged
     assert "text" in processed
     assert "System information." in processed["text"]
     assert "User query content." in processed["text"]

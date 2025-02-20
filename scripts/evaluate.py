@@ -8,7 +8,7 @@ from src.models.model_factory import ModelFactory
 from src.evaluation.evaluator import evaluate_model
 
 def main(config_path: str) -> None:
-    logger = setup_logger("evaluate", logging.INFO)
+    logger = setup_logger("evaluate", logging.INFO, "logs/evaluate.log")
     config = ConfigLoader.load(config_path)
     
     model_config = config["model"]
@@ -16,8 +16,12 @@ def main(config_path: str) -> None:
     model = ModelFactory.create(model_config, tokenizer)
     
     prompt = input("Enter your prompt: ")
-    output = evaluate_model(model, tokenizer, prompt)
-    print("Model output:\n", output)
+    try:
+        output = evaluate_model(model, tokenizer, prompt)
+        print("Model output:\n", output)
+    except Exception as e:
+        logger.error(f"Evaluation error: {str(e)}")
+        print("Evaluation failed.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
