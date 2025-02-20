@@ -16,3 +16,6 @@ venv/
 
 # Large model files (if using git LFS, configure accordingly)
 *.safetensors
+
+# Do not commit sensitive token files
+config/token.yaml

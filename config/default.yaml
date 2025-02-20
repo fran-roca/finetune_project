@@ -19,6 +19,7 @@ model:
     - "</tool_call>"
     - "<tool_response>"
     - "</tool_response>"
+  # Do NOT include hf_token here. Provide your Hugging Face token in config/token.yaml or via the HF_TOKEN environment variable.
 
 dataset_name: "Jofthomas/hermes-function-calling-thinking-V1"
 test_size: 0.1
