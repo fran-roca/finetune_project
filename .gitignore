@@ -1,0 +1,18 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Large model files (if using git LFS, configure accordingly)
+*.safetensors

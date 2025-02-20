@@ -1,0 +1,9 @@
+transformers
+datasets
+peft
+trl
+pyyaml
+torch
+wandb
+tensorboardX
+pytest
